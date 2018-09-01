@@ -1,1 +1,7 @@
 <h1>Hello, world</h1>
+
+<% if @user %>
+  <p>You are id is <%= @user.id %><p>
+<% else %>
+  <p>You are not logged in</p>
+<% end %>
