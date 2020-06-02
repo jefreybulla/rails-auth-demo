@@ -17,18 +17,6 @@ end
 ## Creating a new user
 ```
   def create
-    @user = User.find_by_email(params[:session][:email])
-    if @user && @user.authenticate(params[:session][:password])
-      session[:user_id] = @user.id
-      redirect_to '/'
-    else
-      redirect_to 'login'
-    end
-  end
-```
-## Creating a session (authenticating an existing user)
-```
-  def create
     @user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password))
     if @user.save
       session[:user_id] = @user.id
@@ -38,6 +26,17 @@ end
     end
   end
 ```
-
+## Creating a session (authenticating an existing user)
+```
+  def create
+    @user = User.find_by_email(params[:session][:email])
+    if @user && @user.authenticate(params[:session][:password])
+      session[:user_id] = @user.id
+      redirect_to '/'
+    else
+      redirect_to 'login'
+    end
+  end
+```
 ## Documentation
 https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password
