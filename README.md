@@ -38,5 +38,5 @@ end
     end
   end
 ```
-## Documentation
+## has_secure_password docs
 https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password
