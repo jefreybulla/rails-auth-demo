@@ -7,6 +7,13 @@ This demo shows how to set up a basic authentication strategy using has_secure_p
 - Ruby 2.3.0
 - sqlite3
 
+## Build
+```
+$ bundle install
+$ rails db:migrate
+$ rails server
+```
+
 ## User model
 ```
 class User < ApplicationRecord
